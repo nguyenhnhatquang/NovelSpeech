@@ -10,18 +10,20 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.UseMauiCommunityToolkit()
+			.UseMauiCommunityToolkitMediaElement()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("fa-brands-400.ttf", "FAB");
 				fonts.AddFont("fa-regular-400.ttf", "FAR");
 				fonts.AddFont("fa-solid-900.ttf", "FAS");
-			})
-            .UseMauiCommunityToolkitMediaElement();
+			});
+
 
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-		
+
 		return builder.Build();
 	}
 }

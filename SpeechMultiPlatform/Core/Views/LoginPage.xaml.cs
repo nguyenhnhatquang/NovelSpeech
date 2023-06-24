@@ -13,21 +13,13 @@ public partial class LoginPage : ContentPage
         BindingContext = _viewModel;
     }
 
-    protected override async void OnAppearing()
+    protected override void OnAppearing()
     {
         base.OnAppearing();
-        //var loggedin = true;
-        //if(loggedin)
-        //await Shell.Current.GoToAsync($"//{nameof(CoffeeEquipmentPage)}");
-    }
-    
-    private void Button_Clicked(object sender, EventArgs e)
-    {
-        
-    }
 
-    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
-    {
-        
+        if (_authService.IsAuthenticated())
+        {
+            // Set Nav 
+        }
     }
 }

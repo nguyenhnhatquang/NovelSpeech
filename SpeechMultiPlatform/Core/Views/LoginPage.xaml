@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SpeechMultiPlatform.Core.Views.LoginPage"
              xmlns:fontawesome="clr-namespace:FontAwesome"
+             xmlns:cells="clr-namespace:SpeechMultiPlatform.Core.Cells"
              Shell.FlyoutBehavior="Disabled"
              Shell.NavBarIsVisible="False">
-    
     <ContentPage.Content>
         <StackLayout Padding="40" 
                      VerticalOptions="Center"
                      HorizontalOptions="FillAndExpand">
-
-            <ActivityIndicator IsRunning="{Binding IsBusy}" />
-            
             <Label Text="LOGIN"
                    FontSize="30"
                    VerticalOptions="Center"
@@ -26,7 +22,7 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20"/>
                     <ColumnDefinition Width="*"/>
@@ -74,7 +70,7 @@
                 <!-- Button Register -->
 
             </Grid>
-            
+
             <HorizontalStackLayout VerticalOptions="Center" 
                                    HorizontalOptions="Center" 
                                    Margin="0, 20, 0, 0">
@@ -89,4 +85,5 @@
             </HorizontalStackLayout>
         </StackLayout>
     </ContentPage.Content>
+
 </ContentPage>

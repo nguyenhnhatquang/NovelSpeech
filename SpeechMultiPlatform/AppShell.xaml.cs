@@ -1,6 +1,4 @@
-﻿using SpeechMultiPlatform.Core.Views;
-
-namespace SpeechMultiPlatform;
+﻿namespace SpeechMultiPlatform;
 
 public partial class AppShell : Shell
 {

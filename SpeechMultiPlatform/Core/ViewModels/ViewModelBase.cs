@@ -2,12 +2,21 @@ namespace SpeechMultiPlatform.Core.ViewModels;
 
 public partial class ViewModelBase : ObservableObject
 {
-    [ObservableProperty]
-    private string title;
+    private string _title;
 
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(IsNotBusy))]
-    private bool isBusy;
+    private bool _isBusy;
+
+    public bool IsBusy
+    {
+        get { return _isBusy; }
+        set { SetProperty(ref _isBusy, value); }
+    }
 
     public bool IsNotBusy => !IsBusy;
+
+    public string Title
+    {
+        get { return _title; }
+        set { SetProperty(ref _title, value); }
+    }
 }

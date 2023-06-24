@@ -4,8 +4,13 @@ public partial class LoginViewModel : ViewModelBase
 {
     private IAuthService _authService;
 
-    [ObservableProperty]
-    private AuthenticationModel authModel;
+    private AuthenticationModel _authModel;
+
+    public AuthenticationModel AuthModel
+    {
+        get { return _authModel; }
+        set { SetProperty(ref _authModel, value); }
+    }
 
     public ICommand LoginCommand { get; }
     public ICommand ForgotPasswordCommand { get; }
@@ -21,16 +26,16 @@ public partial class LoginViewModel : ViewModelBase
 
     private async void LoginAsync()
     {
-        IsBusy = true;
+        //WaitLayerControl.Open();
         if (await _authService.LoginAsync(AuthModel))
         {
-            IsBusy = false;
+            //WaitLayerControl.Close();
             //await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
             await Application.Current.MainPage.DisplayAlert("Alert", "Login Success", "OK");
         }
         else
         {
-            IsBusy = false;
+            //WaitLayerControl.Close();
             await Application.Current.MainPage.DisplayAlert("Alert", "Login Failure", "OK");
         }
     }
