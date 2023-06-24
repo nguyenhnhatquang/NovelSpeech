@@ -9,7 +9,7 @@
     <ContentPage.Content>
         <StackLayout Padding="40" 
                      VerticalOptions="Center"
-                     HorizontalOptions="FillAndExpand">
+                     HorizontalOptions="FillAndExpand" >
             <Label Text="LOGIN"
                    FontSize="30"
                    VerticalOptions="Center"

@@ -26,16 +26,16 @@ public partial class LoginViewModel : ViewModelBase
 
     private async void LoginAsync()
     {
-        //WaitLayerControl.Open();
+        WaitLayerControl.Open();
         if (await _authService.LoginAsync(AuthModel))
         {
-            //WaitLayerControl.Close();
+            WaitLayerControl.Close();
             //await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
             await Application.Current.MainPage.DisplayAlert("Alert", "Login Success", "OK");
         }
         else
         {
-            //WaitLayerControl.Close();
+            WaitLayerControl.Close();
             await Application.Current.MainPage.DisplayAlert("Alert", "Login Failure", "OK");
         }
     }
